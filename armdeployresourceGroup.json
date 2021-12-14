@@ -1,14 +1,30 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "resourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Enter the name of the Resource Group"
+            },
+            "defaultValue": "myRG001"
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "Enter the location of the Resource Group"
+            },
+            "defaultValue": "Australia East"
+        }
+    },
     "functions": [],
     "variables": {},
     "resources": [
         {
-            "name": "rg-ghactions",
+            "name": "[parameters('resourceGroupName')]",
             "type": "Microsoft.Resources/resourceGroups",
-            "location": "eastus",
+            "apiVersion": "2021-04-01",
+            "location": "[parameters('location')]",
             "dependsOn": [],
             "tags": {}
         }
