@@ -8,7 +8,6 @@
         {
             "name": "rg-ghactions",
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2021-05-01",
             "location": "eastus",
             "dependsOn": [],
             "tags": {}
